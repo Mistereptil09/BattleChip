@@ -26,6 +26,45 @@ Boat initBoat(int length, int size_x, int size_y) {
     return boat;
 }
 
+Boat* initBoatManual(int size_x, int size_y, int boat_number) {
+    char *ship_names[] = {"Porte-avions", "Croiseur", "Destroyer 1", "Destroyer 2", "Torpilleur"};
+    int ship_sizes[] = {5, 4, 3, 3, 2};
+    Boat* boats = malloc(sizeof(Boat) * boat_number);
+
+
+    for (int i = 0; i < boat_number; i++) {
+        printf("Placez votre %s (%d cases)\\n", ship_names[i], ship_sizes[i]);
+        printf("Position de départ (ex: B3): ");
+        char* result[3] = {0};
+        scanf("%s", &result[0]);
+
+        char* orientation[2] = {0};
+        printf("Enrez l'orientation (H/V): ");
+        scanf("%c", &orientation[0]);
+
+        int max_x= 65 + size_x;
+        Position* position = malloc(sizeof(Position) * boat_);
+
+        if (result[0] >= 65 && result[0] <= max_x){
+            if (result[1] >= 1 && result[1] <= size_y){
+                if (orientation[0] == 'H'){
+                    if (result[0]+ship_sizes[i] <= max_x){
+
+                        for (int j = 0; j < number_of_boats; j++) {
+                            if (boats[j].position.x){
+
+                            }
+                        }
+                    }
+                } else if (orientation[0] == 'V') {
+
+                }
+            }
+        }
+    }
+    return boats;
+}
+
 void initGame(Player* players, int number_of_boats, int number_of_players, int size_x, int size_y) {
     for (int i = 0; i < number_of_players; i++) {
         Boat* boats = malloc(sizeof(Boat) * number_of_boats);
