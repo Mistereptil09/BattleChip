@@ -16,8 +16,15 @@ int main(void) {
     int number_of_boats = 5;
     int size_x = 10;
     int size_y = 10;
+    int placement = -1;
+
+    while (placement != 1 && placement != 0) {
+        printf("Comment placer les bateaux (0 = Aléatoire / 1 = (Em)Manuel)");
+        scanf("%d", &placement);
+    }
+
     Player* players = malloc(sizeof(Player) * number_of_players);
-    initGame(players, number_of_boats, number_of_players, size_x, size_y);
+    initGame(players, number_of_boats, number_of_players, size_x, size_y, placement);
 
     for (int i = 0; i < number_of_players; i++) {
         printf("Player %d\n", i);

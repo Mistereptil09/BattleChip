@@ -65,21 +65,26 @@ Boat* initBoatManual(int size_x, int size_y, int boat_number) {
     return boats;
 }
 
-void initGame(Player* players, int number_of_boats, int number_of_players, int size_x, int size_y) {
+void initGame(Player* players, int number_of_boats, int number_of_players, int size_x, int size_y, int placement) {
     for (int i = 0; i < number_of_players; i++) {
-        Boat* boats = malloc(sizeof(Boat) * number_of_boats);
-        int counter = 2;
-        for (int j = 0; j < number_of_boats; j++) {
-            Boat boat = initBoat(counter, size_x, size_y);
-            boats[j] = boat;
-            counter++;
-            if (counter > 5) {
-                counter = 3;
+        if (placement == 0){
+            Boat* boats = malloc(sizeof(Boat) * number_of_boats);
+            int counter = 2;
+            for (int j = 0; j < number_of_boats; j++) {
+                Boat boat = initBoat(counter, size_x, size_y);
+                boats[j] = boat;
+                counter++;
+                if (counter > 5) {
+                    counter = 3;
+                }
             }
+            char* name = malloc(sizeof(char) * 10);
+            sprintf(name, "Player%d", i);
+            players[i] = initPlayer(boats, name, number_of_boats, i);
         }
-        char* name = malloc(sizeof(char) * 10);
-        sprintf(name, "Player%d", i);
-        players[i] = initPlayer(boats, name, number_of_boats, i);
+        else {
+            initBoatManual(size_x, size_y, number_of_boats);
+        }
     }
 }
 
