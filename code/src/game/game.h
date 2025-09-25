@@ -1,12 +1,5 @@
 #ifndef GAME_H
 #define GAME_H
-
-typedef struct
-{
-    char* name;
-    int position;
-} Player;
-
 typedef struct
 {
     int x;
@@ -26,7 +19,13 @@ typedef struct
     int orientation;
     int hit;
     int sunk;
-    Player player;
 } Boat;
+
+typedef struct
+{
+    char* name;
+    int position;
+    Boat* boats;
+} Player;
 
 #endif // GAME_H
