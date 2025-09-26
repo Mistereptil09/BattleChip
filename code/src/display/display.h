@@ -5,6 +5,6 @@
 #ifndef BATTLECHIP_DISPLAY_H
 #define BATTLECHIP_DISPLAY_H
 
-void dpl_print_table(int i);
+void display (char** map);
 
 #endif //BATTLECHIP_DISPLAY_H
