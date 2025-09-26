@@ -16,4 +16,6 @@ add_executable(BattleChip
         code/src/game/game.c
         code/src/game/game.h
         code/src/main.c
-        )
+        code/src/user_input/user_input.c
+        code/src/user_input/user_input.h
+)
